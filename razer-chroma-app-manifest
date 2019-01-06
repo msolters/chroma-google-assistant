@@ -1,0 +1,17 @@
+{
+    "title": "Razer Chroma Google Assistant Connector",
+    "description": "Control Razer Chroma color from Google Assistant",
+    "author": {
+        "name": "Mark Solters",
+        "contact": "www.marksolters.com"
+    },
+    "device_supported": [
+        "keyboard",
+        "mouse",
+        "headset",
+        "mousepad",
+        "keypad",
+        "chromalink"
+    ],
+    "category": "application"
+}
