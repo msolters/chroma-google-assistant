@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source ./config
+bash razer-client.sh &
+razer_client_pid=$!
+function cleanup {
+  echo "Stopping Razer Chroma SDK Client"
+  kill $razer_client_pid
+}
+trap cleanup exit
+
+node index.js
+

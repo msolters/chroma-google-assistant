@@ -1,0 +1,3 @@
+export TOPIC_NAME=chroma-asst
+export GCP_PROJECT_ID=myproject-029372
+export GOOGLE_APPLICATION_CREDENTIALS=gcp-sa.json
