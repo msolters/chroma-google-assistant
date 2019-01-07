@@ -2,3 +2,4 @@ razer_sdk_port
 package-lock.json
 node_modules/
 gcp-sa.json
+config

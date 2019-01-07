@@ -28,9 +28,15 @@ fs.readFile('razer_sdk_port', 'utf8', (err, contents) => {
   razer_sdk_port = parseInt(contents, 10);
 });
 
-async function createTopic(topicName) {
-  await pubsubClient.createTopic(topicName);
+async function start(topicName) {
+  try {
+    await pubsubClient.createTopic(topicName);
+  } catch (e) {}
+  try {
+    await pubsubClient.topic(topicName).createSubscription(topicName);
+  } catch (e) {}
   console.log(`Topic ${topicName} created.`);
+  listenForMessages(topicName)
 }
 
 function listenForMessages(subscriptionName) {
@@ -75,5 +81,4 @@ function listenForMessages(subscriptionName) {
   console.log(`Connected to Google PubSub and listening for messages on ${subscriptionName}`)
 }
 
-createTopic(process.env.TOPIC_NAME)
-listenForMessages(process.env.TOPIC_NAME)
+start(process.env.TOPIC_NAME)
