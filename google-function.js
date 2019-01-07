@@ -24,7 +24,7 @@ async function publishMessage(topicName, data) {
 // Convert human color name into an RGB hex value and
 // publish it to the Pubsub topic.
 function setHexColor(colorName) {
-  http.get(encodeURI(`https://www.colorhexa.com/color.php?c=${colorName.replace(/\"/g, "")}`), (res) => {
+  http.get(encodeURI(`https://www.colorhexa.com/color.php?c=${colorName}`), (res) => {
     const { statusCode } = res;
     const contentType = res.headers['content-type'];
 
